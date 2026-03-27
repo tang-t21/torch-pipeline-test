@@ -1,0 +1,18 @@
+{
+  "avg_step_time_s": 4.8980384431779385,
+  "device_type": "cpu",
+  "global_batch_size": 4,
+  "hidden_size": 128,
+  "mean_loss": 5.5862061977386475,
+  "mode": "reference",
+  "num_heads": 4,
+  "num_layers": 4,
+  "parameter_count": 600064,
+  "peak_memory_bytes": 0.0,
+  "precision": "float32",
+  "seq_len": 32,
+  "steps": 3,
+  "steps_per_second": 0.20416336286474335,
+  "tokens_per_second": 25.316256995228173,
+  "warmup_steps": 1
+}
