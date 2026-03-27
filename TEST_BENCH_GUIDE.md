@@ -34,7 +34,7 @@ Training uses synthetic token batches and next-token cross-entropy. This keeps t
 
 ### 1. Model Construction
 
-The model lives in [model.py](/gpfs/users/tangtian/torch-pipeline-test/llm_pipeline_bench/model.py).
+The model lives in `llm_pipeline_bench/model.py`.
 
 It defines:
 
@@ -53,7 +53,7 @@ The model size is controlled entirely from CLI flags:
 
 ### 2. Reference Training Path
 
-The reference path lives in [runtime.py](/gpfs/users/tangtian/torch-pipeline-test/llm_pipeline_bench/runtime.py) as `run_reference_training`.
+The reference path lives in `llm_pipeline_bench/runtime.py` as `run_reference_training`.
 
 Flow:
 
@@ -67,7 +67,7 @@ This gives you a non-pipeline baseline for correctness and rough performance.
 
 ### 3. Distributed Pipeline Path
 
-The pipeline path also lives in [runtime.py](/gpfs/users/tangtian/torch-pipeline-test/llm_pipeline_bench/runtime.py) as `run_pipeline_training`.
+The pipeline path also lives in `llm_pipeline_bench/runtime.py` as `run_pipeline_training`.
 
 Flow:
 
@@ -248,15 +248,15 @@ python profile.py \
 
 The benchmark was validated on:
 
-- pod: `job-d2ae18a09e96-20260326165107-master-0`
-- namespace: `qiji`
+- pod: `<your-training-pod>`
+- namespace: `<your-namespace>`
 - hardware: `8 x NVIDIA H100 80GB HBM3`
 
 Example:
 
 ```bash
-kubectl exec -it job-d2ae18a09e96-20260326165107-master-0 -n qiji -- bash
-cd /gpfs/users/tangtian/torch-pipeline-test
+kubectl exec -it <your-training-pod> -n <your-namespace> -- bash
+cd <repo-root>
 python profile.py \
   --nproc-per-node 8 \
   --device cuda \
